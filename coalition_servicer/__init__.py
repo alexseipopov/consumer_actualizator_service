@@ -7,7 +7,6 @@ import grpc
 import pika
 from dotenv import load_dotenv
 
-
 load_dotenv()
 coalition_service_channel = grpc.insecure_channel(f'{os.getenv("COALITION_SERVICE_HOST")}:{os.getenv("COALITION_SERVICE_PORT")}')
 coalition_service_stub = coalition_pb2_grpc.CoalitionServiceStub(coalition_service_channel)
