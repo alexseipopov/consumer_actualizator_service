@@ -1,12 +1,12 @@
 import json
 import os
 
+import coalition_service.coalition_service_pb2 as coalition_pb2
+import coalition_service.coalition_service_pb2_grpc as coalition_pb2_grpc
 import grpc
 import pika
 from dotenv import load_dotenv
 
-import coalition_service.coalition_service_pb2 as coalition_pb2
-import coalition_service.coalition_service_pb2_grpc as coalition_pb2_grpc
 
 load_dotenv()
 coalition_service_channel = grpc.insecure_channel(f'{os.getenv("COALITION_SERVICE_HOST")}:{os.getenv("COALITION_SERVICE_PORT")}')
