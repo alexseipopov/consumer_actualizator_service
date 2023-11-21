@@ -24,7 +24,7 @@ def callback(ch, method, properties, body):
 
 # Подключение к серверу RabbitMQ
 credentials = pika.PlainCredentials(username='garroshm', password='Mongol2022')
-connection = pika.BlockingConnection(pika.ConnectionParameters('localhost', credentials=credentials))
+connection = pika.BlockingConnection(pika.ConnectionParameters(os.getenv("BROKER_HOST"), credentials=credentials))
 channel = connection.channel()
 
 # Создание очереди (если её нет)
